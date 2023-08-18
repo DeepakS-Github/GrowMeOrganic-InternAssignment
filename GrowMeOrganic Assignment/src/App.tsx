@@ -1,6 +1,5 @@
 import Page1HomePage from './components/page1/Page1HomePage.tsx';
-import Page2HomePage from './components/page2/Page2HomePage.js';
-
+import Page2HomePage from './components/page2/Page2HomePage.tsx';
 
 import {
   BrowserRouter as Router,
@@ -12,7 +11,6 @@ function App() {
 
   return (
     <>
-
       <Router>
         <Routes>
           <Route path="/" element={<Page1HomePage />} />
