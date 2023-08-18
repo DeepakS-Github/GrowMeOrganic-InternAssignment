@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 
 const Page1HomePage: React.FC = () => {
   const [name, setName] = useState('');
@@ -15,7 +16,6 @@ const Page1HomePage: React.FC = () => {
     if (name && phone && email) {
       const userDetails = { name, phone, email };
       localStorage.setItem('userDetails', JSON.stringify(userDetails));
-      window.location.href = '/page2';
     }
   };
 
@@ -57,10 +57,11 @@ const Page1HomePage: React.FC = () => {
           required
         />
 
-
+      <Link to="/page2">
           <Button type="submit" variant="contained" color="primary">
             Submit
           </Button>
+          </Link>
       </form>
     </Box>
   );
