@@ -1,4 +1,4 @@
-import Page1HomePage from './components/page1/Page1HomePage.js';
+import Page1HomePage from './components/page1/Page1HomePage.tsx';
 import Page2HomePage from './components/page2/Page2HomePage.js';
 
 
