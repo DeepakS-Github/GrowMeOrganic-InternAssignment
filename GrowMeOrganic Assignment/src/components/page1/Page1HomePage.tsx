@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import { Link } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom'; // Import useHistory
 
 const Page1HomePage: React.FC = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -16,15 +17,17 @@ const Page1HomePage: React.FC = () => {
     if (name && phone && email) {
       const userDetails = { name, phone, email };
       localStorage.setItem('userDetails', JSON.stringify(userDetails));
+      
+      navigate('/page2'); 
     }
   };
 
   return (
     <Box
-    width="100vw"
-    display="flex"
-    justifyContent="center"
-  >
+      width="100vw"
+      display="flex"
+      justifyContent="center"
+    >
       <form onSubmit={handleSubmit} style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
         <h1>User Details Form</h1>
         <TextField
@@ -56,12 +59,9 @@ const Page1HomePage: React.FC = () => {
           fullWidth 
           required
         />
-
-      <Link to="/page2">
-          <Button type="submit" variant="contained" color="primary">
-            Submit
-          </Button>
-          </Link>
+        <Button type="submit" variant="contained" color="primary">
+          Submit
+        </Button>
       </form>
     </Box>
   );
