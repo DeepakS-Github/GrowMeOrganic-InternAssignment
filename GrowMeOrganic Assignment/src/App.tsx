@@ -1,5 +1,5 @@
-import Page1HomePage from './components/page1/Page1HomePage';
-import Page2HomePage from './components/page2/Page2HomePage';
+import Page1HomePage from './components/page1/Page1HomePage.tsx';
+import Page2HomePage from './components/page2/Page2HomePage.tsx';
 
 
 import {
